@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private final int serverPort = 20080;
     private Button button;
     private Button button2;
+    private Button button3;
     private TextView answerServer;
 
     @Override
@@ -42,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         button=findViewById(R.id.button1);
         answerServer=findViewById(R.id.textView4);
         button2=findViewById(R.id.button2);
+        button3=findViewById(R.id.button3);
 
-        // Button-Klick-Ereignis
+        // Button-Klick-Ereignisse
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 calculateAndDisplayChecksum();
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                answerServer.setText("");
             }
         });
 
