@@ -50,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
                 connectServer();
             }
         });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calculateAndDisplayChecksum();
+            }
+        });
 
 
     }
@@ -83,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            answerServer.setText(response);
+                            answerServer.append(response+ "\n");
                         }
                     });
 
@@ -101,7 +107,30 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
     }
+    private void calculateAndDisplayChecksum() {
+        matrikelnummer = inputMatrikelnummer.getText().toString();
 
+        // Berechnung der alternierenden Quersumme
+        int alternatingChecksum = calculateAlternatingChecksum(matrikelnummer);
+
+        // Ausgabe der alternierenden Quersumme
+        answerServer.append("Alternierende Quersumme: " + alternatingChecksum + "\n" +
+                "Die alternierende Quersumme ist " + (alternatingChecksum % 2 == 0 ? "gerade." : "ungerade.") + "\n");
+    }
+
+    // Methode zur Berechnung der alternierenden Quersumme einer Zahl
+    private int calculateAlternatingChecksum(String input) {
+        int sum = 0;
+        for (int i = 0; i < input.length(); i++) {
+            int digit = Character.getNumericValue(input.charAt(i));
+            if (i % 2 == 0) {
+                sum += digit;
+            } else {
+                sum -= digit;
+            }
+        }
+        return Math.abs(sum); // Betrag der Summe zurückgeben
+    }
 
 
 }
