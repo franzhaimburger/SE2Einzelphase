@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C8C8C8"
+    android:background="#DCDCDC"
     tools:context=".MainActivity">
 
 
@@ -16,7 +16,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="136dp"
         android:text="Gib deine Matrikelnummer ein"
-        android:textColor="#5E5E5E"
+        android:textColor="#464646"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +29,7 @@
         android:layout_marginEnd="117dp"
         android:layout_marginBottom="372dp"
         android:text="Antwort vom Server"
-        android:textColor="#5E5E5E"
+        android:textColor="#464646"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,23 +38,24 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="123dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
         android:layout_marginEnd="144dp"
-        android:background="#5E5E5E"
-        android:text="Abschicken"
+        android:backgroundTint="#AAAAAA"
+        android:text="ABSCHICKEN"
         android:textColor="@color/black"
+        app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-
         tools:layout_editor_absoluteY="582dp" />
 
     <EditText
         android:id="@+id/inputMatrikelnummer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
         android:ems="10"
         android:inputType="text"
         tools:layout_editor_absoluteX="100dp"
@@ -63,11 +64,11 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="104dp"
-        android:layout_height="36dp"
+        android:layout_height="22dp"
         android:text="NetworkTest"
         android:textColor="@color/white"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="36dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
