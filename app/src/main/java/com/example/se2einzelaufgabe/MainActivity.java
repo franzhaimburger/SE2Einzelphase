@@ -73,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
                     BufferedReader inputStream = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     String response = inputStream.readLine();
 
+                    outputStream.close();
                     out.close();
+                    inputStream.close();
                     socket.close();
 
                     // Update UI on the main thread
@@ -85,7 +87,13 @@ public class MainActivity extends AppCompatActivity {
                     });
 
                 } catch (Exception e) {
-                    throw new RuntimeException(e);
+                    // Update UI on the main thread
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            answerServer.setText("Error: " + e.getMessage());
+                        }
+                    });
                 }
 
 
