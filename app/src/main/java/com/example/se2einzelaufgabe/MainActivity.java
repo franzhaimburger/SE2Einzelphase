@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            answerServer.setText("Fehler: " + e.getMessage());
+                            answerServer.setText("Fehler: " + e.getMessage() + "\n");
                         }
                     });
                 }
