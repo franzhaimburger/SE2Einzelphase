@@ -25,9 +25,9 @@
         android:id="@+id/textView2"
         android:layout_width="177dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="117dp"
+        android:layout_marginStart="110dp"
         android:layout_marginEnd="117dp"
-        android:layout_marginBottom="372dp"
+        android:layout_marginBottom="368dp"
         android:text="Antwort vom Server"
         android:textColor="#464646"
         android:textSize="20sp"
@@ -71,17 +71,15 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="142dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="242dp"
+        android:layout_width="412dp"
+        android:layout_height="54dp"
+        android:background="#009688"
+        android:gravity="center|left"
         android:text="NetworkTest"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/textView4"
