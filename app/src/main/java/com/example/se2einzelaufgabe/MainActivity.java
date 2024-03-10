@@ -3,7 +3,6 @@ package com.example.se2einzelaufgabe;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -25,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private final String serverName = "se2-submission.aau.at";
     private final int serverPort = 20080;
     private Button button;
+    private Button button2;
     private TextView answerServer;
 
     @Override
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         inputMatrikelnummer=findViewById(R.id.inputMatrikelnummer);
         button=findViewById(R.id.button1);
         answerServer=findViewById(R.id.textView4);
+        button2=findViewById(R.id.button2);
 
         // Button-Klick-Ereignis
         button.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            answerServer.setText("Error: " + e.getMessage());
+                            answerServer.setText("Fehler: " + e.getMessage());
                         }
                     });
                 }
@@ -100,5 +101,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
     }
+
+
 
 }
