@@ -19,6 +19,7 @@ import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Deklaration der Klassenvariablen
     private String matrikelnummer;
     private TextView inputMatrikelnummer;
     private final String serverName = "se2-submission.aau.at";
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        //Initalisierung der UI-Elemente
         inputMatrikelnummer=findViewById(R.id.inputMatrikelnummer);
         button=findViewById(R.id.button1);
         answerServer=findViewById(R.id.textView4);
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    //Methode zur Herstellung einer Verbindung zum Server
     private void connectServer () {
 
         matrikelnummer=inputMatrikelnummer.getText().toString();
@@ -88,12 +90,13 @@ public class MainActivity extends AppCompatActivity {
                     BufferedReader inputStream = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     String response = inputStream.readLine();
 
+                    //Ressourcen freigeben und Verbindung schließen
                     outputStream.close();
                     out.close();
                     inputStream.close();
                     socket.close();
 
-                    // Update UI on the main thread
+                    // UI auf dem Hauptthread aktualisieren
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -102,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     });
 
                 } catch (Exception e) {
-                    // Update UI on the main thread
+                    // UI auf dem Hauptthread aktualisieren
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
